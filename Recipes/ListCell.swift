@@ -35,7 +35,9 @@ extension ListCell {
         contentView.addSubview(label)
 
         accessoryImageView.translatesAutoresizingMaskIntoConstraints = false
+        accessoryImageView.image = UIImage(named: "cake")
         contentView.addSubview(accessoryImageView)
+        
 
         selectedBackgroundView = UIView()
         selectedBackgroundView?.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)

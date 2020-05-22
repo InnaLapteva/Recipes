@@ -10,7 +10,6 @@ import UIKit
 
 class TextCell: UICollectionViewCell {
     let label = UILabel()
-    let imageView = UIImageView()
     static let reuseIdentifier = "text-cell-reuse-identifier"
 
     override init(frame: CGRect) {
@@ -27,16 +26,13 @@ extension TextCell {
     func configure() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
-        contentView.addSubview(imageView)
         contentView.addSubview(label)
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.font = .helveticaNeueBold()
+        label.textColor = .white
+        
         let inset = CGFloat(10)
         NSLayoutConstraint.activate([
-            //image
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            
             //label
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
